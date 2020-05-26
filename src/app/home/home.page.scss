@@ -1,0 +1,31 @@
+ion-tab-button {
+  --color-selected: #fff;
+}
+img {
+  margin-left: 10px;
+  margin-top: 130px;
+  height: 50px;
+}
+ion-card-subtitle {
+  margin-left: 75px;
+  padding-top: 100px;
+  color: 'dark';
+}
+.user-part {
+  height: 190px;
+  background-image: url('https://images.pexels.com/photos/826349/pexels-photo-826349.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+ion-item {
+  color: white;
+}
+
+ion-item {
+  --ion-background-color: #0f4c81 !important;
+  // --background: url('https://images.pexels.com/photos/3518623/pexels-photo-3518623.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // background-size: cover;
+}
+ion-icon {
+  color: white;
+}

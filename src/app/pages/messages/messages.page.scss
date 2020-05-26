@@ -1,0 +1,55 @@
+#agora_local {
+  height: 100px;
+  width: 100px;
+  float: left;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+}
+
+.remote-containers div {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  float: left; /* add this */
+  margin-left: 170;
+  margin-top: 300;
+  margin-right: auto;
+  z-index: 1;
+}
+
+.input {
+  margin-top: 400px;
+}
+div.timesetter {
+  text-align: center;
+  background-color: #07689f;
+  width: 50%;
+  margin: 30px auto;
+  width: 300px;
+}
+
+div.timesetter h2 {
+  font-family: 'Josenfin Sans';
+}
+
+h3.clockFont {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+}
+
+.class1 {
+  float: left;
+}
+ion-toolbar {
+  --ion-background-color: #0f4c81 !important;
+}
+ion-title {
+  color: white;
+  text-align: center;
+}
+ion-icon {
+  width: 30px;
+  height: 30px;
+}
