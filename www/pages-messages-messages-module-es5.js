@@ -753,7 +753,7 @@ var CountdownModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n     <ion-menu-toggle>\n <ion-icon name=\"menu\"></ion-icon>\n     </ion-menu-toggle>\n    <ion-title>Messages</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div ng-app=\"stopwatch\">\n    <div class=\"timesetter\" ng-controller=\"timeController as times\">\n      <h2>Call End In</h2>\n      <countdown\n        #cd\n        [config]=\"{ leftTime:2400,demand:true}\"\n        (event)=\"handleEvent($event)\"\n      ></countdown>\n    </div>\n  </div>\n\n  <div #agora_local id=\"agora_local\"></div>\n\n  <div class=\"remote-containers\">\n    <div\n      class=\"remote_calls\"\n      *ngFor=\"let remote of remoteCalls;\"\n      [id]=\"remote\"\n    ></div>\n  </div>\n  <ion-input\n    class=\"input\"\n    autocomplete=\"off\"\n    type=\"text\"\n    name=\"chanelname\"\n    [(ngModel)]=\"Channel_name\"\n  ></ion-input>\n\n  <ion-button (click)=\"startCall()\" (click)=\"cd.resume()\" color=\"dark\"\n    >start Call\n  </ion-button>\n\n  <ion-button (click)=\"leave()\" (click)=\"cd.stop()\" color=\"dark\"\n    >End Call</ion-button\n  >\n</ion-content>"
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-menu-toggle>\r\n      <ion-icon name=\"menu\" color=\"light\"></ion-icon>\r\n    </ion-menu-toggle>\r\n    <ion-title>Join Meeting</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div ng-app=\"stopwatch\">\r\n    <div class=\"timesetter\" ng-controller=\"timeController as times\">\r\n      <h2>Call End In</h2>\r\n      <countdown\r\n        #cd\r\n        [config]=\"{ leftTime:2400,demand:true}\"\r\n        (event)=\"handleEvent($event)\"\r\n      ></countdown>\r\n    </div>\r\n  </div>\r\n\r\n  <div #agora_local id=\"agora_local\"></div>\r\n\r\n  <div class=\"remote-containers\">\r\n    <div\r\n      class=\"remote_calls\"\r\n      *ngFor=\"let remote of remoteCalls;\"\r\n      [id]=\"remote\"\r\n    ></div>\r\n  </div>\r\n  <ion-input\r\n    class=\"input\"\r\n    autocomplete=\"off\"\r\n    type=\"text\"\r\n    name=\"chanelname\"\r\n    [(ngModel)]=\"Channel_name\"\r\n  ></ion-input>\r\n\r\n  <ion-button (click)=\"startCall()\" (click)=\"cd.resume()\" color=\"dark\"\r\n    >start Call\r\n  </ion-button>\r\n\r\n  <ion-button (click)=\"leave()\" (click)=\"cd.stop()\" color=\"dark\"\r\n    >End Call</ion-button\r\n  >\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -822,7 +822,7 @@ var MessagesPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#agora_local {\n  height: 100px;\n  width: 100px;\n  float: left;\n  position: absolute;\n  margin-left: auto;\n  margin-right: auto;\n  z-index: 2;\n}\n\n.remote-containers div {\n  height: 500px;\n  width: 500px;\n  position: relative;\n  float: left;\n  /* add this */\n  margin-left: 170;\n  margin-top: 300;\n  margin-right: auto;\n  z-index: 1;\n}\n\n.input {\n  margin-top: 400px;\n}\n\ndiv.timesetter {\n  text-align: center;\n  background-color: #07689f;\n  width: 50%;\n  margin: 30px auto;\n  width: 300px;\n}\n\ndiv.timesetter h2 {\n  font-family: \"Josenfin Sans\";\n}\n\nh3.clockFont {\n  font-family: \"Orbitron\", sans-serif;\n  font-size: 3rem;\n}\n\n.class1 {\n  float: left;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWVzc2FnZXMvQzpcXFVzZXJzXFxBU1VTXFxEZXNrdG9wXFxBbmd1bGFyLXByb2plY3RzXFxBY3VQYWNlTW9iaVRlYW0tbWFzdGVyICgxKVxcQWN1UGFjZU1vYmlUZWFtLW1hc3Rlci9zcmNcXGFwcFxccGFnZXNcXG1lc3NhZ2VzXFxtZXNzYWdlcy5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL21lc3NhZ2VzL21lc3NhZ2VzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsaUJBQUE7RUFDRixrQkFBQTtFQUNBLFVBQUE7QUNDRjs7QURFQTtFQUNJLGFBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0VBQVksYUFBQTtFQUNaLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQ0VKOztBRENBO0VBQ0ksaUJBQUE7QUNFSjs7QURBQTtFQUNFLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxVQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0FDR0Y7O0FEQUE7RUFDRSw0QkFBQTtBQ0dGOztBREFBO0VBQ0UsbUNBQUE7RUFDQSxlQUFBO0FDR0Y7O0FEQUE7RUFDRSxXQUFBO0FDR0YiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9tZXNzYWdlcy9tZXNzYWdlcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYWdvcmFfbG9jYWx7XG4gICAgaGVpZ2h0OiAxMDBweDtcbiAgICB3aWR0aDogMTAwcHg7XG4gICAgZmxvYXQ6IGxlZnQ7XG4gICAgcG9zaXRpb246YWJzb2x1dGU7XG4gICAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbiAgei1pbmRleDoyO1xufVxuXG4ucmVtb3RlLWNvbnRhaW5lcnMgZGl2e1xuICAgIGhlaWdodDogNTAwcHg7XG4gICAgd2lkdGg6IDUwMHB4O1xuICAgIHBvc2l0aW9uIDpyZWxhdGl2ZTtcbiAgICBmbG9hdDpsZWZ0OyAvKiBhZGQgdGhpcyAqL1xuICAgIG1hcmdpbi1sZWZ0OiAxNzA7XG4gICAgbWFyZ2luLXRvcDozMDA7XG4gICAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xuICAgIHotaW5kZXg6MVxufVxuXG4uaW5wdXR7XG4gICAgbWFyZ2luLXRvcDo0MDBweDtcbn1cbmRpdi50aW1lc2V0dGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDc2ODlmO1xuICB3aWR0aDogNTAlO1xuICBtYXJnaW46IDMwcHggYXV0bztcbiAgd2lkdGg6IDMwMHB4O1xufVxuXG5kaXYudGltZXNldHRlciBoMiB7XG4gIGZvbnQtZmFtaWx5OiBcIkpvc2VuZmluIFNhbnNcIjtcbn1cblxuaDMuY2xvY2tGb250IHtcbiAgZm9udC1mYW1pbHk6IFwiT3JiaXRyb25cIiwgc2Fucy1zZXJpZjtcbiAgZm9udC1zaXplOiAzcmVtO1xufVxuXG4uY2xhc3Mxe1xuICBmbG9hdDogbGVmdDtcbn0iLCIjYWdvcmFfbG9jYWwge1xuICBoZWlnaHQ6IDEwMHB4O1xuICB3aWR0aDogMTAwcHg7XG4gIGZsb2F0OiBsZWZ0O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIG1hcmdpbi1sZWZ0OiBhdXRvO1xuICBtYXJnaW4tcmlnaHQ6IGF1dG87XG4gIHotaW5kZXg6IDI7XG59XG5cbi5yZW1vdGUtY29udGFpbmVycyBkaXYge1xuICBoZWlnaHQ6IDUwMHB4O1xuICB3aWR0aDogNTAwcHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZmxvYXQ6IGxlZnQ7XG4gIC8qIGFkZCB0aGlzICovXG4gIG1hcmdpbi1sZWZ0OiAxNzA7XG4gIG1hcmdpbi10b3A6IDMwMDtcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xuICB6LWluZGV4OiAxO1xufVxuXG4uaW5wdXQge1xuICBtYXJnaW4tdG9wOiA0MDBweDtcbn1cblxuZGl2LnRpbWVzZXR0ZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwNzY4OWY7XG4gIHdpZHRoOiA1MCU7XG4gIG1hcmdpbjogMzBweCBhdXRvO1xuICB3aWR0aDogMzAwcHg7XG59XG5cbmRpdi50aW1lc2V0dGVyIGgyIHtcbiAgZm9udC1mYW1pbHk6IFwiSm9zZW5maW4gU2Fuc1wiO1xufVxuXG5oMy5jbG9ja0ZvbnQge1xuICBmb250LWZhbWlseTogXCJPcmJpdHJvblwiLCBzYW5zLXNlcmlmO1xuICBmb250LXNpemU6IDNyZW07XG59XG5cbi5jbGFzczEge1xuICBmbG9hdDogbGVmdDtcbn0iXX0= */"
+module.exports = "#agora_local {\n  height: 100px;\n  width: 100px;\n  float: left;\n  position: absolute;\n  margin-left: auto;\n  margin-right: auto;\n  z-index: 2;\n}\n\n.remote-containers div {\n  height: 500px;\n  width: 500px;\n  position: relative;\n  float: left;\n  /* add this */\n  margin-left: 170;\n  margin-top: 300;\n  margin-right: auto;\n  z-index: 1;\n}\n\n.input {\n  margin-top: 400px;\n}\n\ndiv.timesetter {\n  text-align: center;\n  background-color: #07689f;\n  width: 50%;\n  margin: 30px auto;\n  width: 300px;\n}\n\ndiv.timesetter h2 {\n  font-family: \"Josenfin Sans\";\n}\n\nh3.clockFont {\n  font-family: \"Orbitron\", sans-serif;\n  font-size: 3rem;\n}\n\n.class1 {\n  float: left;\n}\n\nion-toolbar {\n  --ion-background-color: #0f4c81 !important;\n}\n\nion-title {\n  color: white;\n  text-align: center;\n}\n\nion-icon {\n  width: 30px;\n  height: 30px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWVzc2FnZXMvQzpcXFVzZXJzXFxsZW5vdm9cXERlc2t0b3BcXHByb2plY3RcXGFjdU1FRVQvc3JjXFxhcHBcXHBhZ2VzXFxtZXNzYWdlc1xcbWVzc2FnZXMucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9tZXNzYWdlcy9tZXNzYWdlcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FDQ0Y7O0FERUE7RUFDRSxhQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUFhLGFBQUE7RUFDYixnQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7QUNFRjs7QURDQTtFQUNFLGlCQUFBO0FDRUY7O0FEQUE7RUFDRSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsVUFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtBQ0dGOztBREFBO0VBQ0UsNEJBQUE7QUNHRjs7QURBQTtFQUNFLG1DQUFBO0VBQ0EsZUFBQTtBQ0dGOztBREFBO0VBQ0UsV0FBQTtBQ0dGOztBRERBO0VBQ0UsMENBQUE7QUNJRjs7QURGQTtFQUNFLFlBQUE7RUFDQSxrQkFBQTtBQ0tGOztBREhBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUNNRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL21lc3NhZ2VzL21lc3NhZ2VzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNhZ29yYV9sb2NhbCB7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICB3aWR0aDogMTAwcHg7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gIG1hcmdpbi1yaWdodDogYXV0bztcclxuICB6LWluZGV4OiAyO1xyXG59XHJcblxyXG4ucmVtb3RlLWNvbnRhaW5lcnMgZGl2IHtcclxuICBoZWlnaHQ6IDUwMHB4O1xyXG4gIHdpZHRoOiA1MDBweDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgZmxvYXQ6IGxlZnQ7IC8qIGFkZCB0aGlzICovXHJcbiAgbWFyZ2luLWxlZnQ6IDE3MDtcclxuICBtYXJnaW4tdG9wOiAzMDA7XHJcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xyXG4gIHotaW5kZXg6IDE7XHJcbn1cclxuXHJcbi5pbnB1dCB7XHJcbiAgbWFyZ2luLXRvcDogNDAwcHg7XHJcbn1cclxuZGl2LnRpbWVzZXR0ZXIge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDc2ODlmO1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgbWFyZ2luOiAzMHB4IGF1dG87XHJcbiAgd2lkdGg6IDMwMHB4O1xyXG59XHJcblxyXG5kaXYudGltZXNldHRlciBoMiB7XHJcbiAgZm9udC1mYW1pbHk6ICdKb3NlbmZpbiBTYW5zJztcclxufVxyXG5cclxuaDMuY2xvY2tGb250IHtcclxuICBmb250LWZhbWlseTogJ09yYml0cm9uJywgc2Fucy1zZXJpZjtcclxuICBmb250LXNpemU6IDNyZW07XHJcbn1cclxuXHJcbi5jbGFzczEge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG59XHJcbmlvbi10b29sYmFyIHtcclxuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjMGY0YzgxICFpbXBvcnRhbnQ7XHJcbn1cclxuaW9uLXRpdGxlIHtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbmlvbi1pY29uIHtcclxuICB3aWR0aDogMzBweDtcclxuICBoZWlnaHQ6IDMwcHg7XHJcbn1cclxuIiwiI2Fnb3JhX2xvY2FsIHtcbiAgaGVpZ2h0OiAxMDBweDtcbiAgd2lkdGg6IDEwMHB4O1xuICBmbG9hdDogbGVmdDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xuICB6LWluZGV4OiAyO1xufVxuXG4ucmVtb3RlLWNvbnRhaW5lcnMgZGl2IHtcbiAgaGVpZ2h0OiA1MDBweDtcbiAgd2lkdGg6IDUwMHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGZsb2F0OiBsZWZ0O1xuICAvKiBhZGQgdGhpcyAqL1xuICBtYXJnaW4tbGVmdDogMTcwO1xuICBtYXJnaW4tdG9wOiAzMDA7XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbiAgei1pbmRleDogMTtcbn1cblxuLmlucHV0IHtcbiAgbWFyZ2luLXRvcDogNDAwcHg7XG59XG5cbmRpdi50aW1lc2V0dGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDc2ODlmO1xuICB3aWR0aDogNTAlO1xuICBtYXJnaW46IDMwcHggYXV0bztcbiAgd2lkdGg6IDMwMHB4O1xufVxuXG5kaXYudGltZXNldHRlciBoMiB7XG4gIGZvbnQtZmFtaWx5OiBcIkpvc2VuZmluIFNhbnNcIjtcbn1cblxuaDMuY2xvY2tGb250IHtcbiAgZm9udC1mYW1pbHk6IFwiT3JiaXRyb25cIiwgc2Fucy1zZXJpZjtcbiAgZm9udC1zaXplOiAzcmVtO1xufVxuXG4uY2xhc3MxIHtcbiAgZmxvYXQ6IGxlZnQ7XG59XG5cbmlvbi10b29sYmFyIHtcbiAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzBmNGM4MSAhaW1wb3J0YW50O1xufVxuXG5pb24tdGl0bGUge1xuICBjb2xvcjogd2hpdGU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuaW9uLWljb24ge1xuICB3aWR0aDogMzBweDtcbiAgaGVpZ2h0OiAzMHB4O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -840,6 +840,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var angular_agora_rtc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-agora-rtc */ "./node_modules/angular-agora-rtc/fesm5/angular-agora-rtc.js");
 /* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../services/http.service */ "./src/app/services/http.service.ts");
+
+
 
 
 
@@ -848,19 +852,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var MessagesPage = /** @class */ (function () {
     // Add
-    function MessagesPage(agoraService, renderer, data) {
+    function MessagesPage(agoraService, renderer, data, auth, httpservice) {
         this.agoraService = agoraService;
         this.renderer = renderer;
         this.data = data;
+        this.auth = auth;
+        this.httpservice = httpservice;
         this.remoteCalls = [];
         this.agoraService.createClient();
     }
     // Add
     MessagesPage.prototype.startCall = function () {
         var _this = this;
-        this.Channel_name = this.data.getData();
-        console.log(this.Channel_name);
-        this.agoraService.client.join(null, this.Channel_name, null, function (uid) {
+        this.data_object = this.data.getData();
+        console.log(this.data_object.channel_name, this.data_object.room_id);
+        this.agoraService.client.join(null, this.data_object.channel_name, this.data_object.room_id, function (uid) {
             _this.localStream = _this.agoraService.createStream(uid, true, null, null, true, false);
             _this.localStream.setVideoProfile('720p_3');
             _this.subscribeToStreams();
@@ -934,6 +940,9 @@ var MessagesPage = /** @class */ (function () {
         for (var _i = 0, _a = this.element.nativeElement.children; _i < _a.length; _i++) {
             var child = _a[_i];
             this.renderer.removeChild(this.element.nativeElement, child);
+            this.httpservice.post("update_meeting_status.php", { "id": this.authUser.ID, "room_id": this.data_object.room_id }).subscribe(function (res) {
+                console.log(res);
+            });
         }
         console.log(this.remoteCalls);
     };
@@ -944,11 +953,19 @@ var MessagesPage = /** @class */ (function () {
         this.renderer.setStyle(this.element.nativeElement, "z-index", "2");
     };
     MessagesPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.auth.userData$.subscribe(function (res) {
+            _this.authUser = res;
+            console.log(typeof _this.authUser);
+        });
+        console.log(this.authUser);
     };
     MessagesPage.ctorParameters = function () { return [
         { type: angular_agora_rtc__WEBPACK_IMPORTED_MODULE_2__["AngularAgoraRtcService"] },
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"] },
-        { type: _services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] }
+        { type: _services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] },
+        { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
+        { type: _services_http_service__WEBPACK_IMPORTED_MODULE_5__["HttpService"] }
     ]; };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('agora_local', { static: false }),
@@ -966,9 +983,48 @@ var MessagesPage = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [angular_agora_rtc__WEBPACK_IMPORTED_MODULE_2__["AngularAgoraRtcService"],
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"],
-            _services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"]])
+            _services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_5__["HttpService"]])
     ], MessagesPage);
     return MessagesPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/data.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/data.service.ts ***!
+  \******************************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var DataService = /** @class */ (function () {
+    function DataService() {
+    }
+    DataService.prototype.setData = function (data) {
+        this.data = data;
+        console.log(this.data);
+    };
+    DataService.prototype.getData = function () {
+        return this.data;
+    };
+    DataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], DataService);
+    return DataService;
 }());
 
 

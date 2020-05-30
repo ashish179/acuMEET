@@ -10,6 +10,8 @@
 var map = {
 	"./pages/about-us/about-us.module": [
 		"./src/app/pages/about-us/about-us.module.ts",
+		"default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3",
+		"common",
 		"pages-about-us-about-us-module"
 	],
 	"./pages/contact-us/contact-us.module": [
@@ -20,15 +22,24 @@ var map = {
 		"./src/app/pages/faq/faq.module.ts",
 		"pages-faq-faq-module"
 	],
+	"./pages/meetings/meetings.module": [
+		"./src/app/pages/meetings/meetings.module.ts",
+		"default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3",
+		"common",
+		"pages-meetings-meetings-module"
+	],
 	"./pages/profile/profile.module": [
 		"./src/app/pages/profile/profile.module.ts",
-		"default~home-home-module~index-index-module~pages-profile-profile-module",
+		"default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3",
 		"default~pages-feed-feed-module~pages-profile-profile-module~pages-welcome-welcome-module",
 		"common",
 		"pages-profile-profile-module"
 	],
 	"./pages/tutorial/tutorial.module": [
 		"./src/app/pages/tutorial/tutorial.module.ts",
+		"default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3",
+		"default~pages-notifications-notifications-module~pages-tutorial-tutorial-module",
+		"common",
 		"pages-tutorial-tutorial-module"
 	]
 };
@@ -480,7 +491,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n"
+module.exports = "<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n"
 
 /***/ }),
 
@@ -503,18 +514,20 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | index-index-module */[__webpack_require__.e("default~home-home-module~index-index-module~pages-profile-profile-module"), __webpack_require__.e("index-index-module")]).then(__webpack_require__.bind(null, /*! ./index/index.module */ "./src/app/index/index.module.ts")).then(m => m.IndexPageModule)
+        loadChildren: () => Promise.all(/*! import() | index-index-module */[__webpack_require__.e("default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3"), __webpack_require__.e("index-index-module")]).then(__webpack_require__.bind(null, /*! ./index/index.module */ "./src/app/index/index.module.ts")).then(m => m.IndexPageModule)
     },
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~home-home-module~index-index-module~pages-profile-profile-module"), __webpack_require__.e("common"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
+        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3"), __webpack_require__.e("common"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
     },
     { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
     { path: 'tutorial', loadChildren: './pages/tutorial/tutorial.module#TutorialPageModule' },
     { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' },
     { path: 'about-us', loadChildren: './pages/about-us/about-us.module#AboutUsPageModule' },
     { path: 'contact-us', loadChildren: './pages/contact-us/contact-us.module#ContactUsPageModule' },
-    { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' }
+    { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' },
+    { path: 'meetings', loadChildren: './pages/meetings/meetings.module#MeetingsPageModule' },
+    { path: 'meetings', loadChildren: './pages/meetings/meetings.module#MeetingsPageModule' }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -728,7 +741,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ASUS\Desktop\Angular-projects\AcuPaceMobiTeam-master (1)\AcuPaceMobiTeam-master\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\lenovo\Desktop\project\acuMEET\src\main.ts */"./src/main.ts");
 
 
 /***/ })

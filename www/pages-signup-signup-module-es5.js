@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"mango\">\n    <ion-title>Registration</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding='true'>\n  <div class=\"center\">\n    <img src=\"assets/images/logo.png\" class=\"smallLogo\"/> \n    <h1>Create Account</h1>\n  </div>\n  <form padding text-center [formGroup]=\"registerForm\">  \n    <ion-list>\n        <ion-item>\n            <ion-label position=\"stacked\">Name</ion-label>\n            <!-- [(ngModel)]=\"postData.name\" -->\n            <ion-input autocomplete=\"off\" formControlName=\"name\" name=\"name\" type=\"text\" ></ion-input>\n          </ion-item> \n          <div class=\"noborder\" no-lines\n          *ngIf=\"!registerForm.controls.name.valid && (registerForm.controls.name.dirty || submitAttempt)\">\n          <p text-left text-wrap class=\"error\">Please enter the Name</p>\n        </div>\n\n      <ion-item>\n        <ion-label position=\"stacked\">Email</ion-label>\n        <ion-input autocomplete=\"off\" formControlName=\"email\" name=\"email\" type=\"email\"></ion-input>\n      </ion-item>\n      <div class=\"noborder\" no-lines\n      *ngIf=\"!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)\">\n      <p text-left text-wrap class=\"error\">Please enter a valid email</p>\n    </div>\n      \n      <ion-item>\n        <ion-label position=\"stacked\">Mobile No</ion-label>\n        <ion-input autocomplete=\"off\" name=\"mobile\" formControlName=\"mobile\" type=\"tel\" ></ion-input>\n      </ion-item> \n      <div class=\"noborder\" no-lines\n      *ngIf=\"!registerForm.controls.mobile.valid && (registerForm.controls.mobile.dirty || submitAttempt)\">\n      <p text-left text-wrap class=\"error\">Please enter 10 digit Mobile No.</p>\n    </div>\n\n      <ion-item lines='none'>\n        Already have an account? <a routerLink='/login'>Sign in.</a>\n      </ion-item>\n    </ion-list>\n    <ion-button expand=\"block\" share=\"round\" color=\"success\" (click)=\"signupAction()\">Registration</ion-button>\n  </form>\n</ion-content>"
+module.exports = "<ion-content padding=\"true\">\r\n  <div class=\"center\">\r\n    <h1>Create Account</h1>\r\n  </div>\r\n  <form padding text-center [formGroup]=\"registerForm\">\r\n    <ion-list>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Name</ion-label>\r\n        <!-- [(ngModel)]=\"postData.name\" -->\r\n        <ion-input\r\n          autocomplete=\"off\"\r\n          formControlName=\"name\"\r\n          name=\"name\"\r\n          type=\"text\"\r\n        ></ion-input>\r\n      </ion-item>\r\n      <div\r\n        class=\"noborder\"\r\n        no-lines\r\n        *ngIf=\"!registerForm.controls.name.valid && (registerForm.controls.name.dirty || submitAttempt)\"\r\n      >\r\n        <p text-left text-wrap class=\"error\">Please enter the Name</p>\r\n      </div>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Email</ion-label>\r\n        <ion-input\r\n          autocomplete=\"off\"\r\n          formControlName=\"email\"\r\n          name=\"email\"\r\n          type=\"email\"\r\n        ></ion-input>\r\n      </ion-item>\r\n      <div\r\n        class=\"noborder\"\r\n        no-lines\r\n        *ngIf=\"!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)\"\r\n      >\r\n        <p text-left text-wrap class=\"error\">Please enter a valid email</p>\r\n      </div>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Mobile No</ion-label>\r\n        <ion-input\r\n          autocomplete=\"off\"\r\n          name=\"mobile\"\r\n          formControlName=\"mobile\"\r\n          type=\"tel\"\r\n        ></ion-input>\r\n      </ion-item>\r\n      <div\r\n        class=\"noborder\"\r\n        no-lines\r\n        *ngIf=\"!registerForm.controls.mobile.valid && (registerForm.controls.mobile.dirty || submitAttempt)\"\r\n      >\r\n        <p text-left text-wrap class=\"error\">\r\n          Please enter 10 digit Mobile No.\r\n        </p>\r\n      </div>\r\n    </ion-list>\r\n    <br />\r\n\r\n    Already have an account? <a routerLink=\"/login\">Sign in.</a>\r\n    <ion-button\r\n      expand=\"block\"\r\n      shape=\"round\"\r\n      color=\"secondary\"\r\n      (click)=\"signupAction()\"\r\n      >Create Account</ion-button\r\n    >\r\n  </form>\r\n\r\n  <div class=\"footer\">\r\n    <p>By signing up! agree with the</p>\r\n    <a href=\"\">term and condition</a>\r\n  </div>\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -70,7 +70,7 @@ var SignupPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "page-signup .noborder {\n  border-bottom: 0px solid #ffffff !important;\n}\npage-signup .error {\n  font-size: 14.4px !important;\n  color: #ea6153;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvc2lnbnVwL0M6XFxVc2Vyc1xcQVNVU1xcRGVza3RvcFxcQW5ndWxhci1wcm9qZWN0c1xcQWN1UGFjZU1vYmlUZWFtLW1hc3RlciAoMSlcXEFjdVBhY2VNb2JpVGVhbS1tYXN0ZXIvc3JjXFxhcHBcXHBhZ2VzXFxzaWdudXBcXHNpZ251cC5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL3NpZ251cC9zaWdudXAucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBO0VBQ0ksMkNBQUE7QUNGSjtBRElFO0VBQ0UsNEJBQUE7RUFDQSxjQUFBO0FDRkoiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9zaWdudXAvc2lnbnVwLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInBhZ2Utc2lnbnVwIHtcblxuLy8gVmFsaWRhdGlvbiBFcnJvciBNc2dcbi5ub2JvcmRlcntcbiAgICBib3JkZXItYm90dG9tOjBweCBzb2xpZCAjZmZmZmZmICFpbXBvcnRhbnQ7XG4gIH1cbiAgLmVycm9ye1xuICAgIGZvbnQtc2l6ZTogMTQuNHB4ICFpbXBvcnRhbnQ7IFxuICAgIGNvbG9yOiAjZWE2MTUzO1xuICB9ICBcblxufSIsInBhZ2Utc2lnbnVwIC5ub2JvcmRlciB7XG4gIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCAjZmZmZmZmICFpbXBvcnRhbnQ7XG59XG5wYWdlLXNpZ251cCAuZXJyb3Ige1xuICBmb250LXNpemU6IDE0LjRweCAhaW1wb3J0YW50O1xuICBjb2xvcjogI2VhNjE1Mztcbn0iXX0= */"
+module.exports = "page-signup .noborder {\n  border-bottom: 0px solid #ffffff !important;\n}\npage-signup .error {\n  font-size: 14.4px !important;\n  color: #ea6153;\n}\nh1 {\n  margin-top: 120px;\n  padding-bottom: 30px;\n  color: #355c7d;\n}\nion-list {\n  border-radius: 15px !important;\n}\nion-content {\n  --background: url(\"https://images.pexels.com/photos/4007310/pexels-photo-4007310.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\")\n    no-repeat center center fixed;\n  background-size: cover;\n}\n.footer {\n  text-align: center;\n  padding-top: 40px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvc2lnbnVwL0M6XFxVc2Vyc1xcbGVub3ZvXFxEZXNrdG9wXFxwcm9qZWN0XFxhY3VNRUVUL3NyY1xcYXBwXFxwYWdlc1xcc2lnbnVwXFxzaWdudXAucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9zaWdudXAvc2lnbnVwLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFRTtFQUNFLDJDQUFBO0FDREo7QURHRTtFQUNFLDRCQUFBO0VBQ0EsY0FBQTtBQ0RKO0FES0E7RUFDRSxpQkFBQTtFQUNBLG9CQUFBO0VBQ0EsY0FBQTtBQ0ZGO0FESUE7RUFDRSw4QkFBQTtBQ0RGO0FESUE7RUFFRTtpQ0FBQTtFQUlBLHNCQUFBO0FDRkY7QURLQTtFQUNFLGtCQUFBO0VBQ0EsaUJBQUE7QUNGRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3NpZ251cC9zaWdudXAucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsicGFnZS1zaWdudXAge1xyXG4gIC8vIFZhbGlkYXRpb24gRXJyb3IgTXNnXHJcbiAgLm5vYm9yZGVyIHtcclxuICAgIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCAjZmZmZmZmICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5lcnJvciB7XHJcbiAgICBmb250LXNpemU6IDE0LjRweCAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6ICNlYTYxNTM7XHJcbiAgfVxyXG59XHJcblxyXG5oMSB7XHJcbiAgbWFyZ2luLXRvcDogMTIwcHg7XHJcbiAgcGFkZGluZy1ib3R0b206IDMwcHg7XHJcbiAgY29sb3I6ICMzNTVjN2Q7XHJcbn1cclxuaW9uLWxpc3Qge1xyXG4gIGJvcmRlci1yYWRpdXM6IDE1cHggIWltcG9ydGFudDtcclxufVxyXG5cclxuaW9uLWNvbnRlbnQge1xyXG4gIC8vLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzBmNGM3NSAhaW1wb3J0YW50O1xyXG4gIC0tYmFja2dyb3VuZDogdXJsKCdodHRwczovL2ltYWdlcy5wZXhlbHMuY29tL3Bob3Rvcy80MDA3MzEwL3BleGVscy1waG90by00MDA3MzEwLmpwZWc/YXV0bz1jb21wcmVzcyZjcz10aW55c3JnYiZkcHI9MSZ3PTUwMCcpXHJcbiAgICBuby1yZXBlYXQgY2VudGVyIGNlbnRlciBmaXhlZDtcclxuICAtd2Via2l0LWJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbiAgLW1vei1iYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbn1cclxuXHJcbi5mb290ZXIge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBwYWRkaW5nLXRvcDogNDBweDtcclxufVxyXG4iLCJwYWdlLXNpZ251cCAubm9ib3JkZXIge1xuICBib3JkZXItYm90dG9tOiAwcHggc29saWQgI2ZmZmZmZiAhaW1wb3J0YW50O1xufVxucGFnZS1zaWdudXAgLmVycm9yIHtcbiAgZm9udC1zaXplOiAxNC40cHggIWltcG9ydGFudDtcbiAgY29sb3I6ICNlYTYxNTM7XG59XG5cbmgxIHtcbiAgbWFyZ2luLXRvcDogMTIwcHg7XG4gIHBhZGRpbmctYm90dG9tOiAzMHB4O1xuICBjb2xvcjogIzM1NWM3ZDtcbn1cblxuaW9uLWxpc3Qge1xuICBib3JkZXItcmFkaXVzOiAxNXB4ICFpbXBvcnRhbnQ7XG59XG5cbmlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiB1cmwoXCJodHRwczovL2ltYWdlcy5wZXhlbHMuY29tL3Bob3Rvcy80MDA3MzEwL3BleGVscy1waG90by00MDA3MzEwLmpwZWc/YXV0bz1jb21wcmVzcyZjcz10aW55c3JnYiZkcHI9MSZ3PTUwMFwiKVxuICAgIG5vLXJlcGVhdCBjZW50ZXIgY2VudGVyIGZpeGVkO1xuICAtd2Via2l0LWJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gIC1tb3otYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3Zlcjtcbn1cblxuLmZvb3RlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZy10b3A6IDQwcHg7XG59Il19 */"
 
 /***/ }),
 
@@ -189,6 +189,59 @@ var SignupPage = /** @class */ (function () {
             _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]])
     ], SignupPage);
     return SignupPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/toast.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/toast.service.ts ***!
+  \*******************************************/
+/*! exports provided: ToastService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToastService", function() { return ToastService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
+var ToastService = /** @class */ (function () {
+    function ToastService(toastController) {
+        this.toastController = toastController;
+    }
+    ToastService.prototype.presentToast = function (infoMessage) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var toast;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.toastController.create({
+                            message: infoMessage,
+                            duration: 2000
+                        })];
+                    case 1:
+                        toast = _a.sent();
+                        toast.present();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ToastService.ctorParameters = function () { return [
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"] }
+    ]; };
+    ToastService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]])
+    ], ToastService);
+    return ToastService;
 }());
 
 

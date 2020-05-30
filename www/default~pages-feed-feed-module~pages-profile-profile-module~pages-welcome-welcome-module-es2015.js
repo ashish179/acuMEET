@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-card *ngFor=\"let feed of feedData; let i = index\">\n  <ion-card-content>\n    <button (click)=\"feedDeleteAction(i, feed.feed_id)\" class=\"right\">\n      <ion-icon name=\"trash\"></ion-icon>\n    </button>\n    <p [innerHTML]=\"feed.feed\"></p>\n    <app-timeago [created]=\"feed.created\"></app-timeago>\n  </ion-card-content>\n</ion-card>"
+module.exports = "<ion-card *ngFor=\"let feed of feedData; let i = index\">\r\n  <ion-card-content>\r\n    <button (click)=\"feedDeleteAction(i, feed.feed_id)\" class=\"right\">\r\n      <ion-icon name=\"trash\"></ion-icon>\r\n    </button>\r\n    <p [innerHTML]=\"feed.feed\"></p>\r\n    <app-timeago [created]=\"feed.created\"></app-timeago>\r\n  </ion-card-content>\r\n</ion-card>"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<ion-card *ngFor=\"let feed of feedData; let i = index\">\n  <
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-item>\n  <ion-textarea placeholder=\"Enter more information here...\" [(ngModel)]=\"postData.feed\"></ion-textarea>\n</ion-item>\n<ion-item>\n  <ion-button color='dark' item-end (click)=\"feedUpdateAction()\">Update</ion-button>\n</ion-item>"
+module.exports = "<ion-item>\r\n  <ion-textarea placeholder=\"Enter more information here...\" [(ngModel)]=\"postData.feed\"></ion-textarea>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-button color='dark' item-end (click)=\"feedUpdateAction()\">Update</ion-button>\r\n</ion-item>"
 
 /***/ }),
 
@@ -29,7 +29,7 @@ module.exports = "<ion-item>\n  <ion-textarea placeholder=\"Enter more informati
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-slides pager=\"true\" [options]=\"slideOpts\">\n  <ion-slide>\n    <img src=\"assets/images/logo.png\" />\n    <h2>Acupace Prototype</h2>\n  </ion-slide>\n  <ion-slide>\n    <h2>Beta version</h2>\n  </ion-slide>\n  <ion-slide>\n    <h2>pending work</h2>\n  </ion-slide>\n</ion-slides>\n"
+module.exports = "<ion-slides pager=\"true\" [options]=\"slideOpts\">\r\n  <ion-slide>\r\n    <h2>Acupace Prototype</h2>\r\n    <video\r\n      autoplay\r\n      loop\r\n      src=\"https://player.vimeo.com/external/406088732.sd.mp4?s=8eb6623fbe53c233d6e87556277f6d2157b43618&profile_id=165&oauth2_token_id=57447761\"\r\n    ></video>\r\n  </ion-slide>\r\n  <ion-slide>\r\n    <h2>Beta version</h2>\r\n  </ion-slide>\r\n  <ion-slide>\r\n    <h2>pending work</h2>\r\n  </ion-slide>\r\n</ion-slides>\r\n"
 
 /***/ }),
 
@@ -40,7 +40,7 @@ module.exports = "<ion-slides pager=\"true\" [options]=\"slideOpts\">\n  <ion-sl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-button expand=\"block\" share=\"round\" color=\"dark\" (click)=\"navigateToLogin()\">Start</ion-button>"
+module.exports = "<ion-button\r\n  expand=\"block\"\r\n  share=\"round\"\r\n  color=\"secondary\"\r\n  (click)=\"navigateToLogin()\"\r\n  >Start</ion-button\r\n>\r\n"
 
 /***/ }),
 
@@ -51,7 +51,7 @@ module.exports = "<ion-button expand=\"block\" share=\"round\" color=\"dark\" (c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  {{newTime | timeAgo}} \n</div>"
+module.exports = "<div>\r\n  {{newTime | timeAgo}} \r\n</div>"
 
 /***/ }),
 
@@ -275,7 +275,7 @@ ComponentsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".right {\n  float: right;\n}\n.right ion-icon {\n  font-size: 18px;\n}\nion-card-content p {\n  color: #333333 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9mZWVkLWNhcmQvQzpcXFVzZXJzXFxBU1VTXFxEZXNrdG9wXFxBbmd1bGFyLXByb2plY3RzXFxBY3VQYWNlTW9iaVRlYW0tbWFzdGVyICgxKVxcQWN1UGFjZU1vYmlUZWFtLW1hc3Rlci9zcmNcXGFwcFxcY29tcG9uZW50c1xcZmVlZC1jYXJkXFxmZWVkLWNhcmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvZmVlZC1jYXJkL2ZlZWQtY2FyZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7QUNDRjtBREFFO0VBQ0UsZUFBQTtBQ0VKO0FERUU7RUFDRSx5QkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9mZWVkLWNhcmQvZmVlZC1jYXJkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJpZ2h0IHtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBpb24taWNvbiB7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICB9XG59XG5pb24tY2FyZC1jb250ZW50e1xuICBwe1xuICAgIGNvbG9yOiMzMzMzMzMgIWltcG9ydGFudDtcbiAgfVxufVxuIiwiLnJpZ2h0IHtcbiAgZmxvYXQ6IHJpZ2h0O1xufVxuLnJpZ2h0IGlvbi1pY29uIHtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuXG5pb24tY2FyZC1jb250ZW50IHAge1xuICBjb2xvcjogIzMzMzMzMyAhaW1wb3J0YW50O1xufSJdfQ== */"
+module.exports = ".right {\n  float: right;\n}\n.right ion-icon {\n  font-size: 18px;\n}\nion-card-content p {\n  color: #333333 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9mZWVkLWNhcmQvQzpcXFVzZXJzXFxsZW5vdm9cXERlc2t0b3BcXHByb2plY3RcXGFjdU1FRVQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXGZlZWQtY2FyZFxcZmVlZC1jYXJkLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21wb25lbnRzL2ZlZWQtY2FyZC9mZWVkLWNhcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0FDQ0Y7QURBRTtFQUNFLGVBQUE7QUNFSjtBREVFO0VBQ0UseUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZmVlZC1jYXJkL2ZlZWQtY2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yaWdodCB7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIGlvbi1pY29uIHtcclxuICAgIGZvbnQtc2l6ZTogMThweDtcclxuICB9XHJcbn1cclxuaW9uLWNhcmQtY29udGVudHtcclxuICBwe1xyXG4gICAgY29sb3I6IzMzMzMzMyAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG4iLCIucmlnaHQge1xuICBmbG9hdDogcmlnaHQ7XG59XG4ucmlnaHQgaW9uLWljb24ge1xuICBmb250LXNpemU6IDE4cHg7XG59XG5cbmlvbi1jYXJkLWNvbnRlbnQgcCB7XG4gIGNvbG9yOiAjMzMzMzMzICFpbXBvcnRhbnQ7XG59Il19 */"
 
 /***/ }),
 
@@ -429,7 +429,7 @@ FeedUpdateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-slide {\n  padding: 160px 20px 160px 20px;\n  display: block;\n}\nion-slide img {\n  width: 100px;\n}\nion-slide h2 {\n  font-size: 36px;\n  font-weight: bold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zbGlkZXMvQzpcXFVzZXJzXFxBU1VTXFxEZXNrdG9wXFxBbmd1bGFyLXByb2plY3RzXFxBY3VQYWNlTW9iaVRlYW0tbWFzdGVyICgxKVxcQWN1UGFjZU1vYmlUZWFtLW1hc3Rlci9zcmNcXGFwcFxcY29tcG9uZW50c1xcc2xpZGVzXFxzbGlkZXMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvc2xpZGVzL3NsaWRlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDhCQUFBO0VBQ0EsY0FBQTtBQ0NGO0FEQUU7RUFDRSxZQUFBO0FDRUo7QURDRTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zbGlkZXMvc2xpZGVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXNsaWRlIHtcbiAgcGFkZGluZzogMTYwcHggMjBweCAxNjBweCAyMHB4O1xuICBkaXNwbGF5OiBibG9jaztcbiAgaW1nIHtcbiAgICB3aWR0aDogMTAwcHg7XG4gIH1cblxuICBoMiB7XG4gICAgZm9udC1zaXplOiAzNnB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICB9XG59XG4iLCJpb24tc2xpZGUge1xuICBwYWRkaW5nOiAxNjBweCAyMHB4IDE2MHB4IDIwcHg7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuaW9uLXNsaWRlIGltZyB7XG4gIHdpZHRoOiAxMDBweDtcbn1cbmlvbi1zbGlkZSBoMiB7XG4gIGZvbnQtc2l6ZTogMzZweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59Il19 */"
+module.exports = "ion-slide {\n  padding: 300px 20px 160px 20px;\n  display: block;\n}\nion-slide img {\n  width: 100px;\n  margin-left: 10px;\n}\nion-slide h2 {\n  font-size: 36px;\n  font-weight: bold;\n  color: #fdfdfd;\n}\nvideo {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  -webkit-transform: translateX(-50%) translateY(-50%);\n          transform: translateX(-50%) translateY(-50%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zbGlkZXMvQzpcXFVzZXJzXFxsZW5vdm9cXERlc2t0b3BcXHByb2plY3RcXGFjdU1FRVQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHNsaWRlc1xcc2xpZGVzLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21wb25lbnRzL3NsaWRlcy9zbGlkZXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSw4QkFBQTtFQUNBLGNBQUE7QUNDRjtBREFFO0VBQ0UsWUFBQTtFQUNBLGlCQUFBO0FDRUo7QURDRTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7QUNDSjtBREdBO0VBQ0UsZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0VBQ0Esb0RBQUE7VUFBQSw0Q0FBQTtBQ0FGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zbGlkZXMvc2xpZGVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXNsaWRlIHtcclxuICBwYWRkaW5nOiAzMDBweCAyMHB4IDE2MHB4IDIwcHg7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgaW1nIHtcclxuICAgIHdpZHRoOiAxMDBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gICAgZm9udC1zaXplOiAzNnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBjb2xvcjogI2ZkZmRmZDtcclxuICB9XHJcbn1cclxuXHJcbnZpZGVvIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIG1pbi13aWR0aDogMTAwJTtcclxuICBtaW4taGVpZ2h0OiAxMDAlO1xyXG4gIHdpZHRoOiBhdXRvO1xyXG4gIGhlaWdodDogYXV0bztcclxuICB6LWluZGV4OiAtMTAwO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtNTAlKSB0cmFuc2xhdGVZKC01MCUpO1xyXG59XHJcbiIsImlvbi1zbGlkZSB7XG4gIHBhZGRpbmc6IDMwMHB4IDIwcHggMTYwcHggMjBweDtcbiAgZGlzcGxheTogYmxvY2s7XG59XG5pb24tc2xpZGUgaW1nIHtcbiAgd2lkdGg6IDEwMHB4O1xuICBtYXJnaW4tbGVmdDogMTBweDtcbn1cbmlvbi1zbGlkZSBoMiB7XG4gIGZvbnQtc2l6ZTogMzZweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiAjZmRmZGZkO1xufVxuXG52aWRlbyB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiA1MCU7XG4gIGxlZnQ6IDUwJTtcbiAgbWluLXdpZHRoOiAxMDAlO1xuICBtaW4taGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogYXV0bztcbiAgaGVpZ2h0OiBhdXRvO1xuICB6LWluZGV4OiAtMTAwO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSkgdHJhbnNsYXRlWSgtNTAlKTtcbn0iXX0= */"
 
 /***/ }),
 

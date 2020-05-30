@@ -14,14 +14,26 @@
     </ion-card-header>
     <ion-card-content>
       <form padding-right [formGroup]="inviteForm">
-        <ion-item lines="inset">
+        <ion-item>
+          <div formArrayName="attendee_email" *ngFor="let email of attendee_email.controls; index as idx">
           <ion-label position="floating">Email</ion-label>
           <ion-input
             type="email"
             class="form-control"
             placeholder="Please Enter the attendee_email"
-            formControlName="attendee_email"
+            [formControlName]="idx"
           ></ion-input>
+           <ion-button
+          shape="round"
+          color="primary"
+          (click)="deleteNameField(idx)"
+          >remove</ion-button>
+        </div>
+        <ion-button
+          shape="round"
+          color="primary"
+          (click)="addNameField()"
+          >add email</ion-button>
         </ion-item>
         <ion-item lines="inset">
           <ion-label position="floating">channel name</ion-label>

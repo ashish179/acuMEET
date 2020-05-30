@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~home-home-module~index-index-module~pages-profile-profile-module"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3"],{
 
 /***/ "./node_modules/@capacitor/core/dist/esm/core-plugin-definitions.js":
 /*!**************************************************************************!*\
@@ -2355,9 +2355,13 @@ var Toast = new ToastPluginWeb();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthConstants", function() { return AuthConstants; });
-class AuthConstants {
-}
-AuthConstants.AUTH = 'userData';
+var AuthConstants = /** @class */ (function () {
+    function AuthConstants() {
+    }
+    AuthConstants.AUTH = 'userData';
+    return AuthConstants;
+}());
+
 
 
 /***/ }),
@@ -2373,73 +2377,122 @@ AuthConstants.AUTH = 'userData';
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StorageService", function() { return StorageService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
 
 
 
-const { Storage } = _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Plugins"];
-let StorageService = class StorageService {
-    constructor() { }
+var Storage = _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Plugins"].Storage;
+var StorageService = /** @class */ (function () {
+    function StorageService() {
+    }
     // Store the value
-    store(storageKey, value) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const encryptedValue = btoa(escape(JSON.stringify(value)));
-            yield Storage.set({
-                key: storageKey,
-                value: encryptedValue
+    StorageService.prototype.store = function (storageKey, value) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var encryptedValue;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        encryptedValue = btoa(escape(JSON.stringify(value)));
+                        return [4 /*yield*/, Storage.set({
+                                key: storageKey,
+                                value: encryptedValue
+                            })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
             });
         });
-    }
+    };
     // Get the value
-    get(storageKey) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const ret = yield Storage.get({ key: storageKey });
-            if (ret.value) {
-                return JSON.parse(unescape(atob(ret.value)));
-            }
-            else {
-                return false;
-            }
-        });
-    }
-    // JSON "get" example
-    getObject() {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const ret = yield Storage.get({ key: 'user' });
-            const user = JSON.parse(ret.value);
-        });
-    }
-    setItem() {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            yield Storage.set({
-                key: 'name',
-                value: 'Max'
+    StorageService.prototype.get = function (storageKey) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var ret;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Storage.get({ key: storageKey })];
+                    case 1:
+                        ret = _a.sent();
+                        if (ret.value) {
+                            return [2 /*return*/, JSON.parse(unescape(atob(ret.value)))];
+                        }
+                        else {
+                            return [2 /*return*/, false];
+                        }
+                        return [2 /*return*/];
+                }
             });
         });
-    }
-    keys() {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const keys = yield Storage.keys();
-            console.log('Got keys: ', keys);
+    };
+    // JSON "get" example
+    StorageService.prototype.getObject = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var ret, user;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Storage.get({ key: 'user' })];
+                    case 1:
+                        ret = _a.sent();
+                        user = JSON.parse(ret.value);
+                        return [2 /*return*/];
+                }
+            });
         });
-    }
-    clear() {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            yield Storage.clear();
+    };
+    StorageService.prototype.setItem = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Storage.set({
+                            key: 'name',
+                            value: 'Max'
+                        })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
         });
-    }
-};
-StorageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-], StorageService);
+    };
+    StorageService.prototype.keys = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var keys;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Storage.keys()];
+                    case 1:
+                        keys = _a.sent();
+                        console.log('Got keys: ', keys);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    StorageService.prototype.clear = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Storage.clear()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    StorageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], StorageService);
+    return StorageService;
+}());
 
 
 
 /***/ })
 
 }]);
-//# sourceMappingURL=default~home-home-module~index-index-module~pages-profile-profile-module-es2015.js.map
+//# sourceMappingURL=default~home-home-module~index-index-module~pages-about-us-about-us-module~pages-meetings-meetings-m~71a403f3-es5.js.map

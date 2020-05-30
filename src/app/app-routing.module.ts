@@ -15,7 +15,9 @@ const routes: Routes = [
   { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' },
   { path: 'about-us', loadChildren: './pages/about-us/about-us.module#AboutUsPageModule' },
   { path: 'contact-us', loadChildren: './pages/contact-us/contact-us.module#ContactUsPageModule' },
-  { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' }
+  { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' },
+  { path: 'meetings', loadChildren: './pages/meetings/meetings.module#MeetingsPageModule' },
+  { path: 'meetings', loadChildren: './pages/meetings/meetings.module#MeetingsPageModule' }
 
 ];
 @NgModule({

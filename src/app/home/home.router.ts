@@ -109,6 +109,21 @@ const routes: Routes = [
           }
         ]
       },
+
+      {
+        path: 'meetings',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/meetings/meetings.module').then(
+                m => m.MeetingsPageModule
+              )
+          }
+        ]
+      }
+
+      ,
         
       {
         path: 'faq',

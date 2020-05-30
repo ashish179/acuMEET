@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n  \t<ion-menu-toggle class=\"class1\">\n <ion-icon name=\"menu\"></ion-icon>\n     </ion-menu-toggle>\n    <ion-title>Profile</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\t      <ion-card>\n    <ion-card-header color=\"secondary\" class=\"login-card-header\">\n      <ion-card-title>Profile</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>\n      <form padding-right [formGroup]=\"profileForm\">\n        <ion-item lines=\"inset\">\n          <ion-label position=\"floating\">password</ion-label>\n          <ion-input\n            type=\"password\"\n            class=\"form-control\"\n            placeholder=\"password\"\n            formControlName=\"password\"\n          ></ion-input>\n        </ion-item>\n          <ion-item lines=\"inset\">\n          <ion-label position=\"floating\">Email</ion-label>\n          <ion-input\n            type=\"password\"\n            class=\"form-control\"\n            placeholder=\"{{this.authUser?.user_email}}\"\n            formControlName=\"password\"\n          ></ion-input>\n        </ion-item>\n         <ion-item lines=\"inset\">\n          <ion-label position=\"floating\">Name</ion-label>\n          <ion-input\n            class=\"form-control\"\n            placeholder=\"{{this.authUser?.name}}\"\n            formControlName=\"name\"\n          ></ion-input>\n        </ion-item>\n         <ion-item lines=\"inset\">\n          <ion-label position=\"floating\">Address</ion-label>\n          <ion-input\n            class=\"form-control\"\n            placeholder=\"{{this.authUser?.address}}\"\n            formControlName=\"address\"\n          ></ion-input>\n        </ion-item>\n\n        <ion-item lines=\"none\" class=\"ion-item-right-margin\">\n          <ion-button size=\"default\" slot=\"end\" type=\"submit\" (click)=\"refresh()\"\n            >refresh</ion-button\n          >\n        </ion-item>\n\n      </form>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n"
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-menu-toggle class=\"class1\">\r\n      <ion-icon name=\"menu\" color=\"light\"></ion-icon>\r\n    </ion-menu-toggle>\r\n    <ion-title>Profile</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-header color=\"secondary\" class=\"login-card-header\">\r\n      <ion-card-title>Profile</ion-card-title>\r\n    </ion-card-header>\r\n    <ion-card-content>\r\n      <form padding-right [formGroup]=\"profileForm\">\r\n        <ion-item lines=\"inset\">\r\n          <ion-label position=\"floating\">password</ion-label>\r\n          <ion-input\r\n            type=\"password\"\r\n            class=\"form-control\"\r\n            placeholder=\"password\"\r\n            formControlName=\"password\"\r\n          ></ion-input>\r\n        </ion-item>\r\n        <ion-item lines=\"inset\">\r\n          <ion-label position=\"floating\">Email</ion-label>\r\n          <ion-input\r\n            type=\"password\"\r\n            class=\"form-control\"\r\n            placeholder=\"{{this.authUser?.user_email}}\"\r\n            formControlName=\"password\"\r\n          ></ion-input>\r\n        </ion-item>\r\n        <ion-item lines=\"inset\">\r\n          <ion-label position=\"floating\">Name</ion-label>\r\n          <ion-input\r\n            class=\"form-control\"\r\n            placeholder=\"{{this.authUser?.name}}\"\r\n            formControlName=\"name\"\r\n          ></ion-input>\r\n        </ion-item>\r\n        <ion-item lines=\"inset\">\r\n          <ion-label position=\"floating\">Address</ion-label>\r\n          <ion-input\r\n            class=\"form-control\"\r\n            placeholder=\"{{this.authUser?.address}}\"\r\n            formControlName=\"address\"\r\n          ></ion-input>\r\n        </ion-item>\r\n\r\n        <ion-item lines=\"none\" class=\"ion-item-right-margin\">\r\n          <ion-button\r\n            size=\"default\"\r\n            slot=\"end\"\r\n            type=\"submit\"\r\n            (click)=\"refresh()\"\r\n            >refresh</ion-button\r\n          >\r\n        </ion-item>\r\n      </form>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -74,7 +74,7 @@ var ProfilePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".class1 {\n  float: left;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcHJvZmlsZS9DOlxcVXNlcnNcXEFTVVNcXERlc2t0b3BcXEFuZ3VsYXItcHJvamVjdHNcXEFjdVBhY2VNb2JpVGVhbS1tYXN0ZXIgKDEpXFxBY3VQYWNlTW9iaVRlYW0tbWFzdGVyL3NyY1xcYXBwXFxwYWdlc1xccHJvZmlsZVxccHJvZmlsZS5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvcHJvZmlsZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxXQUFBO0FDQ0QiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9wcm9maWxlL3Byb2ZpbGUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNsYXNzMXtcblx0ZmxvYXQ6IGxlZnQ7XG59IiwiLmNsYXNzMSB7XG4gIGZsb2F0OiBsZWZ0O1xufSJdfQ== */"
+module.exports = ".class1 {\n  float: left;\n}\n\nion-toolbar {\n  --ion-background-color: #0f4c81 !important;\n}\n\nion-title {\n  color: white;\n  text-align: center;\n}\n\nion-icon {\n  width: 30px;\n  height: 30px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcHJvZmlsZS9DOlxcVXNlcnNcXGxlbm92b1xcRGVza3RvcFxccHJvamVjdFxcYWN1TUVFVC9zcmNcXGFwcFxccGFnZXNcXHByb2ZpbGVcXHByb2ZpbGUucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9wcm9maWxlL3Byb2ZpbGUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtBQ0NGOztBRENBO0VBQ0UsMENBQUE7QUNFRjs7QURBQTtFQUNFLFlBQUE7RUFDQSxrQkFBQTtBQ0dGOztBRERBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUNJRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvcHJvZmlsZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2xhc3MxIHtcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5pb24tdG9vbGJhciB7XHJcbiAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzBmNGM4MSAhaW1wb3J0YW50O1xyXG59XHJcbmlvbi10aXRsZSB7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5pb24taWNvbiB7XHJcbiAgd2lkdGg6IDMwcHg7XHJcbiAgaGVpZ2h0OiAzMHB4O1xyXG59XHJcbiIsIi5jbGFzczEge1xuICBmbG9hdDogbGVmdDtcbn1cblxuaW9uLXRvb2xiYXIge1xuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjMGY0YzgxICFpbXBvcnRhbnQ7XG59XG5cbmlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG5pb24taWNvbiB7XG4gIHdpZHRoOiAzMHB4O1xuICBoZWlnaHQ6IDMwcHg7XG59Il19 */"
 
 /***/ }),
 
@@ -153,6 +153,59 @@ var ProfilePage = /** @class */ (function () {
             _services_toast_service__WEBPACK_IMPORTED_MODULE_3__["ToastService"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])
     ], ProfilePage);
     return ProfilePage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/toast.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/toast.service.ts ***!
+  \*******************************************/
+/*! exports provided: ToastService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToastService", function() { return ToastService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
+var ToastService = /** @class */ (function () {
+    function ToastService(toastController) {
+        this.toastController = toastController;
+    }
+    ToastService.prototype.presentToast = function (infoMessage) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var toast;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.toastController.create({
+                            message: infoMessage,
+                            duration: 2000
+                        })];
+                    case 1:
+                        toast = _a.sent();
+                        toast.present();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ToastService.ctorParameters = function () { return [
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"] }
+    ]; };
+    ToastService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]])
+    ], ToastService);
+    return ToastService;
 }());
 
 

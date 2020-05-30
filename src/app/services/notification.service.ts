@@ -21,4 +21,8 @@ export class NotificationService {
   public notificationList(bodystring){
   return this.httpservice.post("invitation_notificationlist.php",bodystring);
   }
+
+  public meetingList(bodystring){
+  return this.httpservice.post("host_invitation_notificationlist.php",bodystring);
+  }
 }

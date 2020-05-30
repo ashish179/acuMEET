@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content>\n  <router-outlet></router-outlet>\n</ion-content>"
+module.exports = "<ion-content>\r\n  <router-outlet></router-outlet>\r\n</ion-content>"
 
 /***/ }),
 

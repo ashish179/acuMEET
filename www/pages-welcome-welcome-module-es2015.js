@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content padding=\"true\">\n  <app-slides></app-slides>\n  <app-start-button></app-start-button>\n\n\n</ion-content>\n"
+module.exports = "<ion-content padding=\"true\">\r\n  <app-slides></app-slides>\r\n  <app-start-button></app-start-button>\r\n\r\n\r\n</ion-content>\r\n"
 
 /***/ }),
 
