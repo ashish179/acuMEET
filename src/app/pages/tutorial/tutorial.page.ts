@@ -27,9 +27,10 @@ export class TutorialPage implements OnInit {
   ngOnInit() {
     this.auth.userData$.subscribe((res: any) => {
       this.authUser = res;
-      console.log(typeof this.authUser);
     });
+
     let email = { attendee_email: this.authUser.user_email };
+    console.log(this.authUser);
     this.subscription = this.webservice
       .notificationList(email)
       .subscribe((res: any) => {
@@ -38,13 +39,14 @@ export class TutorialPage implements OnInit {
       });
   }
 
-  goTo(channel_name, start_date, end_date) {
+  goTo(object, start_date, end_date) {
     let now = moment();
     let date = moment.utc(start_date).local();
+    this.data.setData(object);
+    console.log(object);
     if (now.isBefore(end_date) && date.isBefore(now.toISOString(true))) {
       this.toastService.presentToast('to activate meeting press start call');
-      this.data.setData(channel_name);
-      console.log(channel_name);
+      this.data.setData(object);
     } else {
       this.toastService.presentToast('time out of bounds');
     }

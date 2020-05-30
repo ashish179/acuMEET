@@ -74,7 +74,7 @@ export class NotificationsPage implements OnInit {
           .value,
         host_meeting_end_time: this.inviteForm.get('host_meeting_end_time')
           .value,
-        attendee_email: this.inviteForm.get('attendee_email').value,
+        attendee_email: [this.inviteForm.get('attendee_email').value],
       };
       console.log(bodystring);
       this.webservice.AddInvitation(bodystring).subscribe();
