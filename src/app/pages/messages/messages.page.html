@@ -22,12 +22,19 @@
   <div #agora_local id="agora_local"></div>
 
   <div class="remote-containers">
+    <ion-grid>
+       <ion-row>
+        <ion-col *ngFor="let remote of remoteCalls;">
     <div
       class="remote_calls"
-      *ngFor="let remote of remoteCalls;"
       [id]="remote"
-    ></div>
+      onclick="Toggle_Stream(remote)"
+      ></div>
+    <ion-col>
+    </ion-row>
+    </ion-grid>
   </div>
+
   <ion-input
     class="input"
     autocomplete="off"
@@ -41,6 +48,6 @@
   </ion-button>
 
   <ion-button (click)="leave()" (click)="cd.stop()" color="dark"
-    >End Call</ion-button
-  >
+    >End Call</ion-button>
+
 </ion-content>

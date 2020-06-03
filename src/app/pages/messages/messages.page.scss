@@ -12,6 +12,8 @@
   height: 500px;
   width: 500px;
   position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
   float: left; /* add this */
   margin-left: 170;
   margin-top: 300;

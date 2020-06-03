@@ -6,6 +6,7 @@ import { CountdownModule } from "ngx-countdown";
 import { DataService } from './../../services/data.service';
 import { AuthService } from './../../services/auth.service';
 import { HttpService } from './../../services/http.service';
+import { AlertService } from './../../services/alert.service';
 import { ToastService } from './../../services/toast.service';
 
 
@@ -18,41 +19,63 @@ import { ToastService } from './../../services/toast.service';
 export class MessagesPage implements OnInit {
 
  localStream: Stream // Add
- data_object: any;
+ dataObject: any;
+ channelName : string;
+ UID : any;
+ localCallId = 'agora_local-fullscreen';
+ reset:any;
+ public remoteStreams = {};
  subscription : any;
  remoteCalls: any = [];
  @ViewChild('agora_local',{static: false}) private element : ElementRef;
- @ViewChild('remote_calls',{static: false}) private container : ElementRef;
+ @ViewChild('container',{static: false}) private container : ElementRef;
+  @ViewChild('test',{static: false}) private test : ElementRef;
  public authUser: any;
+  public LocalStreamID=this.localCallId;
   // Add
   constructor(
-    private agoraService: AngularAgoraRtcService,    
+    private agoraService: AngularAgoraRtcService,
     private renderer: Renderer2,
     public data : DataService ,
     private toastService: ToastService,
     private auth: AuthService,
-    private httpservice : HttpService 
+    private alert: AlertService,
+    private httpservice : HttpService
   ) {
     this.agoraService.createClient();
   }
 
   // Add
   startCall() {
-  this.data_object = this.data.getData();
-  console.log(this.data_object.channel_name,this.data_object.room_id);
-    this.agoraService.client.join(null, this.data_object.channel_name, this.data_object.room_id, (uid) => {
-      this.localStream = this.agoraService.createStream(uid, true, null, null, true, false);
+  this.dataObject = this.data.getData();
+  console.log(this.dataObject);
+  if(this.dataObject.meeting_status == "0"){
+  if(this.dataObject.host_name == this.authUser.name){
+    this.channelName = this.dataObject.channel_name
+    this.UID = this.dataObject.host_room_id;
+  }
+  else{
+   this.channelName = this.dataObject.channel_name
+   this.UID = this.dataObject.room_id;
+  }
+    this.agoraService.client.join(null, this.channelName, this.UID, (uid) => {
+      this.localStream = this.agoraService.createStream(this.UID, true, null, null, true, false);
       this.localStream.setVideoProfile('720p_3');
       this.subscribeToStreams();
     });
+    }
+  else{
+      this.toastService.presentToast("meeting ended");
+    }
   }
 
   // Add
-  private subscribeToStreams() {
+   private subscribeToStreams() {
 
     this.localStream.init(() => {
       console.log("getUserMedia successfully");
       this.localStream.play('agora_local');
+      this.remoteStreams["agora_local"] = this.localStream;
       this.agoraService.client.publish(this.localStream, function (err) {
         console.log("Publish local stream error: " + err);
       });
@@ -88,6 +111,7 @@ export class MessagesPage implements OnInit {
     this.agoraService.client.on('stream-subscribed', (evt) => {
       this.toastService.presentToast('subscribed to a stream');
       const stream = evt.stream;
+      this.remoteStreams[`agora_remote${stream.getId()}`] = stream ;
       if (!this.remoteCalls.includes(`agora_remote${stream.getId()}`)) this.remoteCalls.push(`agora_remote${stream.getId()}`);
       setTimeout(() => stream.play(`agora_remote${stream.getId()}`), 2000);
     });
@@ -105,6 +129,10 @@ export class MessagesPage implements OnInit {
       this.toastService.presentToast('someone left the chat');
       const stream = evt.stream;
       if (stream) {
+        if(this.remoteStreams[this.localCallId]!=this.localStream){
+          this.Toggle(this.localCallId,this.LocalStreamID);
+        }
+        delete this.remoteStreams[evt.uid];
         stream.stop();
         this.remoteCalls = this.remoteCalls.filter(call => call === `#agora_remote${stream.getId()}`);
         console.log(`${evt.uid} left from this channel`);
@@ -115,6 +143,9 @@ export class MessagesPage implements OnInit {
 
 
   leave() {
+    this.alert.presentAlertConfirm("Leaving","are you sure you want to leave you cant enter again").then((res)=>{console.log(res);
+    if(res.role == "okay"){
+    this.localStream.close();
     this.agoraService.client.leave(() => {
       this.toastService.presentToast('left channel');
       console.log("Leavel channel successfully");
@@ -124,14 +155,22 @@ export class MessagesPage implements OnInit {
        console.log("hello");
     for (let child of this.element.nativeElement.children) {
   this.renderer.removeChild(this.element.nativeElement, child);
-  let data = {"id":this.data_object.id,"room_id":this.data_object.room_id};
+}
+  for (let child of this.container.nativeElement.children) {
+  this.renderer.removeChild(this.container.nativeElement, child);
+}
+  let data = {"id":this.dataObject.id,"room_id":this.dataObject.room_id};
   console.log(data);
   this.httpservice.post("update_meeting_status.php",data).subscribe((res: any) => {
         console.log("response");
         console.log(res);
     });
-}
     console.log(this.remoteCalls);
+    }
+    else{
+    console.log("continue")
+    }
+    });
 }
 
 
@@ -142,6 +181,8 @@ adjust(){
   this.renderer.setStyle(this.element.nativeElement,"z-index","2");
 }
 
+
+
   ngOnInit() {
   this.auth.userData$.subscribe((res: any) => {
       this.authUser = res;
@@ -149,6 +190,42 @@ adjust(){
     });
 
    console.log(this.authUser);
+
+   this.startCall();
   }
+
+
+  toggleView(){
+    console.log(this.remoteStreams);
+
+  }
+
+  Toggle_Stream(remoteId:any){
+  if(this.remoteStreams[this.localCallId]!=this.localStream){
+    if(this.LocalStreamID!=remoteId){
+      this.Toggle(this.localCallId,this.LocalStreamID);
+      this.LocalStreamID = this.localCallId;
+      this.Toggle(this.localCallId,remoteId);
+      this.LocalStreamID = remoteId;
+    }
+    else{
+      this.Toggle(this.localCallId,remoteId);
+      this.LocalStreamID = this.localCallId;
+    }
+  }
+  else{
+    this.Toggle(this.localCallId,remoteId);
+    this.LocalStreamID=remoteId;
+  }
+}
+Toggle(local:any,remote:any){
+    this.remoteStreams[local].stop();
+    this.remoteStreams[local].play(remote);
+    this.remoteStreams[remote].stop();
+    this.remoteStreams[remote].play(local);
+    let stream:Stream=this.remoteStreams[local];
+    this.remoteStreams[local]=this.remoteStreams[remote];
+    this.remoteStreams[remote]=stream;
+}
 
 }
