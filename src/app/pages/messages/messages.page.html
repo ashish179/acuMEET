@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div #agora_local id="agora_local"></div>
+  <div #agora_local id="agora_local" (click)="toggleView()"></div>
 
   <div class="remote-containers">
     <ion-grid>
@@ -28,9 +28,10 @@
     <div
       class="remote_calls"
       [id]="remote"
-      onclick="Toggle_Stream(remote)"
+      (click)="Toggle_Stream(remote)"
+
       ></div>
-    <ion-col>
+    </ion-col>
     </ion-row>
     </ion-grid>
   </div>

@@ -22,7 +22,7 @@ export class MessagesPage implements OnInit {
  dataObject: any;
  channelName : string;
  UID : any;
- localCallId = 'agora_local-fullscreen';
+ localCallId = 'agora_local';
  reset:any;
  public remoteStreams = {};
  subscription : any;
@@ -196,11 +196,28 @@ adjust(){
 
 
   toggleView(){
+    let data = "agora_local";
     console.log(this.remoteStreams);
+    console.log(this.remoteStreams[data]);
+    console.log(this.remoteStreams.data);
+
+
 
   }
+  Toggle(local:any,remote:any){
+      console.log(this.remoteStreams[local]);
+      console.log(this.remoteStreams[remote]);
 
+      this.remoteStreams[local].stop();
+      this.remoteStreams[local].play(remote);
+      this.remoteStreams[remote].stop();
+      this.remoteStreams[remote].play(local);
+      let stream:Stream=this.remoteStreams[local];
+      this.remoteStreams[local]=this.remoteStreams[remote];
+      this.remoteStreams[remote]=stream;
+  }
   Toggle_Stream(remoteId:any){
+    console.log(remoteId);
   if(this.remoteStreams[this.localCallId]!=this.localStream){
     if(this.LocalStreamID!=remoteId){
       this.Toggle(this.localCallId,this.LocalStreamID);
@@ -217,15 +234,6 @@ adjust(){
     this.Toggle(this.localCallId,remoteId);
     this.LocalStreamID=remoteId;
   }
-}
-Toggle(local:any,remote:any){
-    this.remoteStreams[local].stop();
-    this.remoteStreams[local].play(remote);
-    this.remoteStreams[remote].stop();
-    this.remoteStreams[remote].play(local);
-    let stream:Stream=this.remoteStreams[local];
-    this.remoteStreams[local]=this.remoteStreams[remote];
-    this.remoteStreams[remote]=stream;
 }
 
 }
