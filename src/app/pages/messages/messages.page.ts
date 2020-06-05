@@ -29,7 +29,15 @@ export class MessagesPage implements OnInit {
  remoteCalls: any = [];
  @ViewChild('agora_local',{static: false}) private element : ElementRef;
  @ViewChild('container',{static: false}) private container : ElementRef;
-  @ViewChild('test',{static: false}) private test : ElementRef;
+ @ViewChild('widgetsContent', {read: ElementRef,static:true}) public widgetsContent: ElementRef<any>;
+
+public scrollRight(): void {
+  this.widgetsContent.nativeElement.scrollTo({ left: (this.widgetsContent.nativeElement.scrollLeft + 250), behavior: 'smooth' });
+}
+
+public scrollLeft(): void {
+  this.widgetsContent.nativeElement.scrollTo({ left: (this.widgetsContent.nativeElement.scrollLeft - 250), behavior: 'smooth' });
+}
  public authUser: any;
   public LocalStreamID=this.localCallId;
   // Add
@@ -199,9 +207,6 @@ adjust(){
     let data = "agora_local";
     console.log(this.remoteStreams);
     console.log(this.remoteStreams[data]);
-    console.log(this.remoteStreams.data);
-
-
 
   }
   Toggle(local:any,remote:any){
